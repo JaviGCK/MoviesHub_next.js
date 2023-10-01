@@ -1,11 +1,17 @@
 .main {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 20vh 1fr;
     text-align: center;
     height: 100vh;
     width: 100vw;
     background-image: url("../../public/assets/image/wallpaperbetter\ \(2\).jpg");
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+.section_header {
+    display: flex;
 }
 
 .logo {
@@ -22,4 +28,10 @@
         3px -3px 0 #000,
         -3px 3px 0 #000,
         3px 3px 0 #000;
+}
+
+.section {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
 }
