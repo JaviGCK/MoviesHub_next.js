@@ -1,7 +1,25 @@
 .main {
+    display: flex;
+    text-align: center;
     height: 100vh;
     width: 100vw;
     background-image: url("../../public/assets/image/wallpaperbetter\ \(2\).jpg");
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+.logo {
+    color: #faff04;
+    text-align: center;
+    font-family: Wendy One;
+    font-size: 6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 1vw;
+    text-shadow:
+        -3px -3px 0 #000,
+        3px -3px 0 #000,
+        -3px 3px 0 #000,
+        3px 3px 0 #000;
 }
