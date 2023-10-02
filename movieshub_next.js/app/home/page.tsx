@@ -1,8 +1,8 @@
 import styles from './home.module.css';
 import React from 'react';
 import Nav from '../../components/nav/nav'
-import Card from '@/components/card/Card';
 import getUserById from '@/services/users.services';
+import CardMovie from '@/components/card/CardMovie';
 
 const Home = async () => {
     const user = await getUserById(1)
@@ -15,7 +15,7 @@ const Home = async () => {
                 <Nav />
             </section>
             <section className={styles.section_movies}>
-                <Card movie={movies} />
+                <CardMovie movie={movies} />
             </section>
         </main>
     );

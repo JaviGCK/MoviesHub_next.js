@@ -9,7 +9,6 @@
     background-image: url("../../public/assets/image/wallpaperbetter\ \(2\).jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    z-index: 111;
 }
 
 .section_header {
@@ -43,5 +42,6 @@
     font-family: Wendy One;
     width: 100%;
     height: 100%;
+    padding-top: 5vh;
     overflow-y: auto;
 }

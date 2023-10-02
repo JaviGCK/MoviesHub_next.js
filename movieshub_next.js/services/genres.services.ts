@@ -1,30 +1,28 @@
 import dotenv from 'dotenv';
 dotenv.config();
 
-const getUserById = async (userId: number): Promise<any> => {
+const fetchDataGenres = async () => {
     const apiUrl = process.env.API_URL_BACKEND;
 
     try {
-        const response = await fetch(`${apiUrl}/users/${userId}`, {
-
+        const response = await fetch(`${apiUrl}/genres`, {
             headers: {
                 'Content-Type': 'application/json',
 
             },
         });
-
         if (!response.ok) {
-            throw new Error(`Error fetching user data by ID: ${response.status}`);
+            throw new Error(`Error fetching genres data: ${response.status}`);
         }
 
         const data = await response.json();
-        console.log('User data:', data);
+        console.log('Genre data:', data);
         return data;
     } catch (error) {
-        console.error('Error fetching user data by ID:', error);
+        console.error('Error fetching genres:', error);
         return null;
     }
+
 };
 
-
-export default getUserById;
+export default fetchDataGenres
