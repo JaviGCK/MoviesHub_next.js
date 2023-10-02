@@ -1,7 +1,7 @@
-import ListGenres from '@/components/genres/listGenres';
 import styles from './genres.module.css';
 import React from 'react'
 import fetchDataGenres from '@/services/genres.services';
+import ListGenres from '@/components/genres/ListGenres';
 
 const GenrePage = async () => {
     const genres = await fetchDataGenres()
