@@ -1,6 +1,7 @@
 import styles from './page.module.css';
+import Login from '@/components/login/Login'
 
-export default function Login() {
+export default function LoginPage() {
   return (
     <main className={styles.main}>
       <h1 className={styles.h1}>
@@ -10,9 +11,7 @@ export default function Login() {
         <p className={styles.p1}>Are you ready for the next level?</p>
         <p>Dive in and start enjoying the ability to save all the movies you've already seen, ensuring you never forget what you've watched</p>
       </div>
-      <div className={styles.button}>
-        <a href='/home' className={styles.login}>Log In</a>
-      </div>
+      <Login />
     </main>
   )
 }

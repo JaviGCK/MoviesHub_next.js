@@ -1,8 +1,13 @@
-import styles from './page.module.css';
+import styles from './home.module.css';
 import React from 'react';
 import Nav from '../../components/nav/nav'
-import Card from '@/components/card/card';
-const Home = () => {
+import Card from '@/components/card/Card';
+import getUserById from '@/services/users.services';
+
+const Home = async () => {
+    const user = await getUserById(1)
+    const movies = user ? user.movies || [] : []
+
     return (
         <main className={styles.main}>
             <section className={styles.section_header}>
@@ -10,7 +15,7 @@ const Home = () => {
                 <Nav />
             </section>
             <section className={styles.section_movies}>
-                <Card />
+                <Card movie={movies} />
             </section>
         </main>
     );
