@@ -1,27 +1,39 @@
+import Link from 'next/link';
 import styles from './nav.module.css';
 import React from 'react';
 import { FaSignOutAlt } from 'react-icons/fa';
+import getUserById from '@/services/users.services';
 
+const Nav = async () => {
+    const user = await getUserById(1);
 
-const Nav = () => {
+    // Convert the user object to a JSON string
+    const userJson = JSON.stringify(user);
+
     return (
         <div className={styles.nav}>
             <div className={styles.button}>
-                <a href='home/profile' className={styles.button_text}>Profile</a>
+                <Link href="home/profile" className={styles.button_text}>
+                    Profile
+                </Link>
             </div>
             <div className={styles.button}>
-                <a href='home/movie' className={styles.button_text}>Add Movie</a>
+                <Link href="home/movie" className={styles.button_text}>
+                    Add Movie
+                </Link>
             </div>
             <div className={styles.button}>
-                <a href='home/genre' className={styles.button_text}>Genres</a>
+                <Link href="home/genre" className={styles.button_text}>
+                    Genres
+                </Link>
             </div>
             <div className={`${styles.button} ${styles.logout}`}>
-                <a href='/' className={styles.button_text}>
+                <Link href="/" className={styles.button_text}>
                     <FaSignOutAlt />
-                </a>
+                </Link>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Nav
+export default Nav;

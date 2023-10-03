@@ -16,7 +16,7 @@ const fetchDataGenres = async () => {
         }
 
         const data = await response.json();
-        console.log('Genre data:', data);
+
         return data;
     } catch (error) {
         console.error('Error fetching genres:', error);

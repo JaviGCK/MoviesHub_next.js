@@ -1,10 +1,11 @@
+import Link from 'next/link';
 import styles from './login.module.css'
 import React from 'react'
 
 const Login = () => {
     return (
         <div className={styles.button}>
-            <a href='/home' className={styles.login}>Log In</a>
+            <Link href='/home' className={styles.login}>Log In</Link>
         </div>
     )
 }
