@@ -1,8 +1,10 @@
 import { Genre, Movie } from '@/types/movie';
 import styles from './cardMovie.module.css';
 import React from 'react';
-import { UpdateMovie } from '../buttons/movies_buttons/UpdateMovie';
+
 import DeleteMovie from '../buttons/movies_buttons/DeleteMovie';
+import Link from 'next/link';
+import UpdateMovieBtn from '../buttons/movies_buttons/UpdateMovieBtn';
 
 
 
@@ -38,7 +40,11 @@ const CardMovie = ({ movie }: Props) => {
                             </div>
                         </div>
                         <div className={styles.actions}>
-                            <UpdateMovie movieId={movie.id} />
+
+                            <AddGenreMovie movieId={movie.id} />
+
+                            <UpdateMovieBtn movieId={movie.id} />
+
                             <DeleteMovie movieId={movie.id} />
 
                         </div>
