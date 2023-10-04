@@ -8,7 +8,9 @@ export interface Movie {
 }
 
 export type Genre = {
+    id: number
     name: string;
+    visible: any;
 };
 
 export type Score = {

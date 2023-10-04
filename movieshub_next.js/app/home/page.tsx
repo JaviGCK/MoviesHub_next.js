@@ -16,6 +16,7 @@ const Home = async () => {
             </section>
             <section className={styles.section_movies}>
                 <CardMovie movie={movies} />
+
             </section>
         </main>
     );

@@ -1,9 +1,10 @@
 'use client'
 import styles from './form.module.css';
 import React, { useRef, useState } from 'react';
-import { createMovie } from '@/actions/movie.action';
+
 import { useRouter } from 'next/navigation';
 import { handleFileChange } from '@/public/assets/utils/utils';
+import { createMovie } from '@/actions/movie.action';
 
 const AddForm = () => {
     const nameRef = useRef<HTMLInputElement | null>(null);
@@ -51,60 +52,62 @@ const AddForm = () => {
 
 
     return (
-        <form className={styles.form} onSubmit={handleSubmit}>
-            {error && <p className="error-message">{error}</p>}
-            <div className={styles.field}>
-                <label className={styles.label} htmlFor="name">Name</label>
-                <input className={styles.input} type="text" id="name" name="name" ref={nameRef} required />
-            </div>
-            <div className={styles.field}>
-                <label className={styles.label} htmlFor="url">Poster</label>
-                <div className={styles.customFileInput}>
-                    <input
-                        type="file"
-                        id="url"
-                        name="url"
-                        ref={urlRef}
-                        required
-                        accept="image/*"
-                        className={styles.inputFile}
-                        onChange={(e) => handleFileChange(e)}
-                    />
-                    <button className={styles.customFileButton} onClick={() => urlRef.current?.click()}>
-                        Select Image
-                    </button>
-                    <span className={styles.fileName} id="file-name">
-                        No file selected
-                    </span>
+        <div className={styles.addForm}>
+            <form className={styles.form} onSubmit={handleSubmit}>
+                {error && <p className="error-message">{error}</p>}
+                <div className={styles.field}>
+                    <label className={styles.label} htmlFor="name">Name</label>
+                    <input className={styles.input} type="text" id="name" name="name" ref={nameRef} required />
                 </div>
-            </div>
-            <div className={styles.field}>
-                <label className={styles.label} htmlFor="score">Score (1-10)</label>
-                <input
-                    className={styles.input}
-                    type="number"
-                    id="score"
-                    name="score"
-                    ref={scoreRef}
-                    required
-                    min="1"
-                    max="10"
-                />
-            </div>
-            <div className={styles.field}>
-                <label className={styles.label} htmlFor="description">Description</label>
-                <textarea
-                    className={styles.input}
-                    id="description"
-                    name="description"
-                    ref={descriptionRef}
-                    required
-                />
-            </div>
-            <div>
-                <button className={styles.button} type="submit">Update</button>
-            </div>
-        </form>
+                <div className={styles.field}>
+                    <label className={styles.label} htmlFor="url">Poster</label>
+                    <div className={styles.customFileInput}>
+                        <input
+                            type="file"
+                            id="url"
+                            name="url"
+                            ref={urlRef}
+                            required
+                            accept="image/*"
+                            className={styles.inputFile}
+                            onChange={(e) => handleFileChange(e)}
+                        />
+                        <button className={styles.customFileButton} onClick={() => urlRef.current?.click()}>
+                            Select Image
+                        </button>
+                        <span className={styles.fileName} id="file-name">
+                            No file selected
+                        </span>
+                    </div>
+                </div>
+                <div className={styles.field}>
+                    <label className={styles.label} htmlFor="score">Score (1-10)</label>
+                    <input
+                        className={styles.input}
+                        type="number"
+                        id="score"
+                        name="score"
+                        ref={scoreRef}
+                        required
+                        min="1"
+                        max="10"
+                    />
+                </div>
+                <div className={styles.field}>
+                    <label className={styles.label} htmlFor="description">Description</label>
+                    <textarea
+                        className={styles.input}
+                        id="description"
+                        name="description"
+                        ref={descriptionRef}
+                        required
+                    />
+                </div>
+                <div >
+                    <button className={styles.buttonAdd} type="submit">Add</button>
+                </div>
+            </form>
+        </div>
     );
 };
 

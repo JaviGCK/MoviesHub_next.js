@@ -1,3 +1,12 @@
+.addForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-family: Wendy One;
+}
+
 .modal {
     position: absolute;
     top: 50%;
@@ -9,6 +18,22 @@
     border-radius: 2.5rem;
     border: 1px solid #0038ff;
     padding: 1rem;
+    background: linear-gradient(227deg, rgba(0, 0, 50, 0.5) 25.7%, rgba(0, 0, 50, 0.5) 94.73%),
+        linear-gradient(227deg, rgba(255, 242, 242, 0.03) 25.7%, rgba(255, 250, 250, 0.07) 94.73%);
+    backdrop-filter: blur(8px);
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.modalxs {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 25vw;
+    height: 31vh;
+    border-radius: 2.5rem;
+    border: 1px solid #0038ff;
+    padding: 3rem;
     background: linear-gradient(227deg, rgba(0, 0, 50, 0.5) 25.7%, rgba(0, 0, 50, 0.5) 94.73%),
         linear-gradient(227deg, rgba(255, 242, 242, 0.03) 25.7%, rgba(255, 250, 250, 0.07) 94.73%);
     backdrop-filter: blur(8px);
@@ -71,4 +96,20 @@
     border: none;
     border-radius: 3.125rem;
     background: #faff04;
+}
+
+.buttonAdd {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 5rem;
+    height: 3rem;
+    font-size: 2rem;
+    border: none;
+    border-radius: 3.125rem;
+    background: #faff04;
+    -webkit-border-radius: 3.125rem;
+    -moz-border-radius: 3.125rem;
+    -ms-border-radius: 3.125rem;
+    -o-border-radius: 3.125rem;
 }

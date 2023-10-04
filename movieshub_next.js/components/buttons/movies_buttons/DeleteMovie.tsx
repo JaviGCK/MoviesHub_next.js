@@ -1,6 +1,7 @@
 'use client'
+import { deleteMovie } from '@/actions/movie.action';
 import styles from './buttons_movies.module.css';
-import deleteMovie from '@/services/movies.services';
+
 import { useRouter } from 'next/navigation';
 import React from 'react';
 import { BsTrash3Fill } from 'react-icons/bs';

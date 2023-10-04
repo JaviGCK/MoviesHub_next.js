@@ -1,9 +1,10 @@
 'use client'
 import React, { useRef, useState } from 'react';
-import { upDateMovie } from '@/actions/movie.action';
+
 import { useRouter } from 'next/navigation';
 import styles from './form.module.css';
 import { handleFileChange } from '@/public/assets/utils/utils';
+import { upDateMovie } from '@/actions/movie.action';
 
 type Props = {
     movieId: number;

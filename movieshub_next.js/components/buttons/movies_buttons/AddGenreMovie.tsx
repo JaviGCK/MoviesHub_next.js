@@ -1,32 +1,35 @@
 'use client'
-import deleteMovie from '@/services/movies.services';
 import styles from './buttons_movies.module.css';
-
 import { useRouter } from 'next/navigation';
-import React from 'react';
-import { BsTrash3Fill } from 'react-icons/bs';
+import React, { useState } from 'react';
+import { IoMdPricetags } from 'react-icons/io';
+import GenreForm from '@/components/form/GenreForm';
 
 type Props = {
     movieId: number;
+    isDisabled: boolean;
 };
 
-const AddGenreMovie = ({ movieId }: Props) => {
+const AddGenreMovieBtn = ({ movieId, isDisabled }: Props) => {
     const router = useRouter();
+    const [isFormVisible, setIsFormVisible] = useState(false);
 
-    const handleDeleteClick = async () => {
-        try {
-            await deleteMovie(movieId);
-            router.refresh();
-        } catch (error) {
-            console.error('Error deleting movie:', error);
-        }
-    }
+    const handleButtonClick = () => {
+        setIsFormVisible(true);
+    };
+
+    const handleCloseForm = () => {
+        setIsFormVisible(false);
+    };
 
     return (
-        <button className={styles.button} onClick={handleDeleteClick}>
-            <BsTrash3Fill className={styles.icon} />
-        </button>
+        <>
+            <button className={styles.button} onClick={handleButtonClick} disabled={isDisabled}>
+                <IoMdPricetags className={styles.icon} />
+            </button>
+            {isFormVisible && <GenreForm movieId={movieId} onClose={handleCloseForm} />}
+        </>
     );
 };
 
-export default AddGenreMovie;
+export default AddGenreMovieBtn;
