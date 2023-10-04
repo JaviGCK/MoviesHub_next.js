@@ -1,8 +1,8 @@
 import { Genre, Movie } from '@/types/movie';
 import styles from './cardMovie.module.css';
 import React from 'react';
-import { UpdateMovie } from '../buttons/movies_actions/UpdateMovie';
-import DeleteMovie from '../buttons/movies_actions/DeleteMovie';
+import { UpdateMovie } from '../buttons/movies_buttons/UpdateMovie';
+import DeleteMovie from '../buttons/movies_buttons/DeleteMovie';
 
 
 

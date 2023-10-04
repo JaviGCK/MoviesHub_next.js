@@ -6,7 +6,6 @@ import getUserById from '@/services/users.services';
 
 const ListUser = async () => {
     const user = await getUserById(1)
-    const movies = user ? user.movies || [] : []
 
     return (
         <>

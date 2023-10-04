@@ -1,10 +1,15 @@
-import styles from './page.module.css';
+import AddMovie from '@/components/add_movie/AddMovie';
+import styles from './movies.module.css';
 import React from 'react'
 
 const MoviePage = () => {
     return (
         <main className={styles.main}>
-            <div>Movie page</div>
+
+            <p className={styles.logo}>H</p>
+            <section className={styles.section}>
+                <AddMovie />
+            </section>
         </main>
     )
 }
