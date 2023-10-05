@@ -7,7 +7,6 @@ import getUserById from '@/services/users.services';
 const Nav = async () => {
     const user = await getUserById(1);
 
-    // Convert the user object to a JSON string
     const userJson = JSON.stringify(user);
 
     return (
@@ -28,9 +27,8 @@ const Nav = async () => {
                 </Link>
             </div>
             <div className={`${styles.button} ${styles.logout}`}>
-                <Link href="/" className={styles.button_text}>
-                    <FaSignOutAlt />
-                </Link>
+                <a href="/api/auth/logout" className={styles.button_text}><FaSignOutAlt />
+                </a>
             </div>
         </div>
     );
